@@ -1,3 +1,49 @@
+/* Layout */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.7fr 1fr 0.7fr;
+    grid-template-areas:
+        "header header header"
+        "image about-heading education-heading"
+        "image about education"
+        "image contacts .";
+    height: 100vmin;
+}
+
+.header-cell {
+    grid-area: header;
+}
+
+.image-cell {
+    grid-area: image;
+}
+
+.about-heading-cell {
+    padding: 20px 0 0 20px;
+    grid-area: about-heading;
+}
+
+.education-heading-cell {
+    padding: 20px 0 0 20px;
+    grid-area: education-heading;
+}
+
+.about-cell {
+    padding: 20px 40px 40px 0;
+    grid-area: about;
+}
+
+.education-cell {
+    padding: 20px 90px 0 0;
+    grid-area: education;
+}
+
+.contacts-cell {
+    grid-area: contacts;
+}
+
+/* Fonts */
 @font-face {
     font-family: Montserrat;
     src: url('fonts/Montserrat.ttf');
@@ -8,24 +54,8 @@
     src: url('fonts/Montserrat-Italic.ttf');
 }
 
-body {
-    margin: 0;
-    font-family: Montserrat;
-    background-image: url("media/background.jpg");
-    background-repeat: repeat;
-    background-size: 270px;
-}
-
-#overlay {
-    position: absolute;
-    top: 100px;
-    left: 20px;
-    height: 12%;
-    width: 90%;
-    background-color: rgba(255, 255, 255, 0.6);
-}
-
-.header {
+/* Text */
+h1 {
     font-size: 50px;
     font-weight: 500;
     color: #444;
@@ -39,10 +69,32 @@ h2 {
     color: #444;
 }
 
-.icon {
-    width: 60px;
-    color: #777;
-    padding: 9px;
+.regular-text {
+    font-size: 20px;
+    color: #444;
+    text-align: justify;
+}
+
+ul {
+    line-height: 123%;
+}
+
+/* Blocks */
+body {
+    margin: 0;
+    font-family: Montserrat;
+    background-image: url("media/background.jpg");
+    background-repeat: repeat;
+    background-size: 270px;
+}
+
+#overlay {
+    position: absolute;
+    top: 75px;
+    left: 60px;
+    height: 12%;
+    width: 91%;
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 .image {
@@ -51,47 +103,15 @@ h2 {
     width: 350px;
 }
 
-.wrapper {
-    margin-left: 80px;
-    margin-right: 80px;
-    margin-top: 60px;
+.icon {
+    width: 60px;
+    padding: 9px;
 }
 
-.parent {
-    display: grid;
-    grid-template-columns: 1fr 1.1fr 1fr;
-    grid-template-rows: 1fr 4fr;
-    grid-column-gap: 20px;
-    grid-row-gap: 0px;
+i {
+    font-family: Montserrat-Italic;
 }
 
-.div1 {
-    grid-area: 1 / 1 / 3 / 2;
-}
-
-.div2 {
-    padding: 20px 0 0 20px;
-    grid-area: 1 / 2 / 2 / 3;
-}
-
-.div3 {
-    padding: 0 40px 0 10px;
-    grid-area: 2 / 2 / 3 / 3;
-}
-
-.div4 {
-    padding-top: 20px;
-    grid-area: 1 / 3 / 2 / 4;
-}
-
-.div5 {
-    padding: 30px 0 0 0;
-    grid-area: 2 / 3 / 3 / 4;
-}
-
-
-.regular-text {
-    font-size: 20px;
-    color: #444;
-    text-align: justify;
+li {
+    margin: 10px 0;
 }
