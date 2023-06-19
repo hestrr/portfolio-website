@@ -1,5 +1,5 @@
 /* Layout */
-.container {
+.container1 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 0.7fr 1fr 0.7fr;
@@ -41,6 +41,21 @@
 
 .contacts-cell {
     grid-area: contacts;
+}
+
+.container2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        ". . ."
+        ". comic ."
+        ". . .";
+    height: 100vmin;
+}
+
+.comic {
+    grid-area: comic;
 }
 
 /* Fonts */
@@ -86,6 +101,10 @@ body {
     background-image: url("media/background.jpg");
     background-repeat: repeat;
     background-size: 270px;
+}
+
+#header {
+    width: 100vw;
 }
 
 #overlay {
