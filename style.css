@@ -7,7 +7,7 @@
         "header header header"
         "image about-heading education-heading"
         "image about education"
-        "image contacts .";
+        "image contacts comic";
     height: 100vmin;
 }
 
@@ -43,19 +43,30 @@
     grid-area: contacts;
 }
 
+.comic-cell {
+    padding: 30px 20px 0 20px;
+    grid-area: comic;
+}
+
 .container2 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr 1fr 1fr;
+    column-gap: 5vmin;
     grid-template-areas:
         ". . ."
+        ". comic-button ."
         ". comic ."
         ". . .";
     height: 100vmin;
 }
 
-.comic {
+.comic-cell {
     grid-area: comic;
+}
+
+.comic-button-cell {
+    grid-area: comic-button;
 }
 
 /* Fonts */
@@ -92,6 +103,12 @@ h2 {
 
 ul {
     line-height: 123%;
+}
+
+.link {
+    font-size: 25px;
+    font-weight: 500;
+    color: #777;
 }
 
 /* Blocks */
@@ -133,4 +150,16 @@ i {
 
 li {
     margin: 10px 0;
+}
+
+button {
+    cursor: pointer;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    color: #444;
+    display: inline-block;
+    font-size: 16px;
 }
