@@ -1,20 +1,12 @@
-// const comicButton = document.getElementById("comic-button");
-// const comicIdParagraph = document.getElementById("comic-id");
-
-function fetchComicId(emailParam) {
+function fetchComicId(emailParam: string) {
     const params = new URLSearchParams({ email: emailParam });
     return fetch('https://fwd.innopolis.app/api/hw2?' + params.toString())
         .then(response => response.json());
 }
 
-// comicButton.addEventListener('click', async function () {
-//     const comicId = await fetchComicId("p.moiseeva@innopolis.university");
-//     comicIdParagraph.innerHTML = comicId;
-// });
-
-
-const comic = document.getElementById("comic-container");
-const comicTitle = document.getElementById("comic-title");
+const comic = document.getElementById("comic-container") as HTMLImageElement;
+const comicTitle = document.getElementById("comic-title") as HTMLParagraphElement;
+const fetchComicButton = document.getElementById('fetch-comic-button') as HTMLButtonElement;
 
 async function fetchComic() {
     let comicId = await fetchComicId("p.moiseeva@innopolis.university");
@@ -30,14 +22,11 @@ async function fetchComic() {
             const date = new Date(result.year, result.month, result.day);
             console.log(date.toLocaleDateString());
             comicTitle.textContent = result.safe_title + ", " + date.toLocaleDateString();
-            document.getElementById('fetch-comic-button').textContent = "Fetch another one";
+            fetchComicButton.textContent = "Fetch another one";
         })
         .catch(err => console.log(err));
-    // document.getElementById('fetch-comic-button').remove();
 }
 
-const button = document.getElementById('fetch-comic-button');
-button.addEventListener('click', () => {
+fetchComicButton.addEventListener('click', () => {
     fetchComic();
-    // button.textContent = "Fetch another one";
 });
