@@ -1,3 +1,5 @@
+import { formatDistance } from 'date-fns';
+
 function fetchComicId(emailParam: string) {
     const params = new URLSearchParams({ email: emailParam });
     return fetch('https://fwd.innopolis.app/api/hw2?' + params.toString())
@@ -19,9 +21,9 @@ async function fetchComic() {
         .then(result => {
             comic.src = result.img;
             comic.setAttribute("alt", result.alt);
-            const date = new Date(result.year, result.month, result.day);
-            console.log(date.toLocaleDateString());
-            comicTitle.textContent = result.safe_title + ", " + date.toLocaleDateString();
+            const date = formatDistance(new Date(result.year, result.month, result.day), new Date()) as string;
+            console.log(date);
+            comicTitle.textContent = result.safe_title + ", " + date;
             fetchComicButton.textContent = "Fetch another one";
         })
         .catch(err => console.log(err));
