@@ -1,0 +1,1 @@
+.comic-cell.svelte-q777dq{padding:30px 20px 0;grid-area:comic}.container2.svelte-q777dq{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr .5fr 1fr 1fr;column-gap:5vmin;grid-template-areas:". . ." ". comic-button ." ". comic ." ". . .";height:100vmin}.comic-button-cell.svelte-q777dq{grid-area:comic-button}
